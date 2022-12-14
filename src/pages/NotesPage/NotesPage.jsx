@@ -1,8 +1,8 @@
-import  NoteCard from '../../components/Note/NoteCard';
+import  NoteCard from '../../components/NoteCard/NoteCard';
 
 import CreateNewNote from "../../components/NewNote/NewNote";
 
-export default function AllNotes({notes, user}) {
+export default function AllNotes({notes, setNotes, user}) {
   return (
     <>
       <h1>Notes</h1>
@@ -13,9 +13,11 @@ export default function AllNotes({notes, user}) {
         <span>No Notes Yet!</span>
         :
         <div>
-          {notes.map((note, i) => (
-            <NoteCard notes={note} key={i} user={user}/>
-          ))}
+          {notes.map((note, idx) => (
+          <div>
+            <NoteCard note={note} key={idx}/>
+          </div>
+        ))}
         </div>
       }
     </>

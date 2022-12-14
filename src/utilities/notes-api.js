@@ -2,7 +2,7 @@ import sendRequest from "./send-request";
 const BASE_URL = '/api/notes';
 
 //user stories
-export async function addNote(notes) {
+export async function create(notes) {
   return await sendRequest(`${BASE_URL}/new`, 'POST', notes);
 }
 
